@@ -55,13 +55,13 @@ const savedTheme = localStorage.getItem('theme');
 // Apply saved or preferred theme
 if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
   document.body.classList.add('dark-theme');
-  themeToggle.innerHTML = '<button id="theme-toggle" aria-label="Toggle light/dark mode" style="background: none; border: none; cursor: pointer;"><i class="fa-solid fa-sun"></i></button>';
+  themeToggle.innerHTML = '<button id="theme-toggle" aria-label="Toggle light/dark mode" style="background: none; border: none; cursor: pointer; color: white;"><i class="fa-solid fa-sun"></i></button>';
 }
 
 // Toggle theme on click
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-theme');
   const isDark = document.body.classList.contains('dark-theme');
-  themeToggle.innerHTML = isDark ? '<button id="theme-toggle" aria-label="Toggle light/dark mode" style="background: none; border: none; cursor: pointer;"><i class="fa-solid fa-sun"></i></button>' : '<button id="theme-toggle" aria-label="Toggle light/dark mode" style="background: none; border: none; cursor: pointer;"><i class="fa-solid fa-moon"></i></button>';
+  themeToggle.innerHTML = isDark ? '<button id="theme-toggle" aria-label="Toggle light/dark mode" style="background: none; border: none; cursor: pointer; color: white;"><i class="fa-solid fa-sun"></i></button>' : '<button id="theme-toggle" aria-label="Toggle light/dark mode" style="background: none; border: none; cursor: pointer; color: white;"><i class="fa-solid fa-moon"></i></button>';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
